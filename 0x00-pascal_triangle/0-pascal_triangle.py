@@ -3,7 +3,8 @@
 Module that contains a function to generate the pascal triangle
 """
 
-def pascal_triangle(n:int) -> list:
+
+def pascal_triangle(n: int) -> list:
     """
     returns list of lists of integers representing the Pascal’s triangle of n
 
