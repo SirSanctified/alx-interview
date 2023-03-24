@@ -13,6 +13,8 @@ def pascal_triangle(n:int) -> list:
     Returns:
         list: the list of lists containing values for the pascal's triangle
     """
+    if n <= 0:
+        return []
     res = [[1]]
     for i in range(n - 1):
         temp = [0] + res[-1] + [0]
