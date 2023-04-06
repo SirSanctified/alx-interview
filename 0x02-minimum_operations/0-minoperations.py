@@ -4,7 +4,7 @@ Minimum Operations
 """
 
 
-def minOperations(n):
+def minOperations(n: int) -> int:
     """Calculates the fewest number of operations needed to result in
     exactly n H characters in the file.
 
@@ -18,8 +18,8 @@ def minOperations(n):
     if n <= 1:
         return 0
 
-    i = 2
-    count = 0
+    i: int = 2
+    count: int = 0
 
     while i <= n:
         if n % i == 0:
@@ -32,10 +32,10 @@ def minOperations(n):
 
 
 if __name__ == '__main__':
-    n = 4
+    n: int = 4
     print("Min # of operations to reach {} characters: {}"
           .format(n, minOperations(n)))
 
-    n = 12
+    n: int = 12
     print("Min # of operations to reach {} characters: {}"
           .format(n, minOperations(n)))
