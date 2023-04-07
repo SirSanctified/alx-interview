@@ -20,8 +20,8 @@ def minOperations(n: int) -> int:
     if n <= 1:
         return 0
 
-    i: int = 2
-    count: int = 0
+    i = 2
+    count = 0
 
     while i <= n:
         if n % i == 0:
@@ -34,10 +34,10 @@ def minOperations(n: int) -> int:
 
 
 if __name__ == '__main__':
-    n: int = 4
+    n = 4
     print("Min # of operations to reach {} characters: {}"
           .format(n, minOperations(n)))
 
-    n: int = 12
+    n = 12
     print("Min # of operations to reach {} characters: {}"
           .format(n, minOperations(n)))
