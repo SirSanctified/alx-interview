@@ -11,10 +11,10 @@ num_lines = 0
 size = 0
 status_codes = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0,
                 "405": 0, "500": 0}
-pattern = r'^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - \[(\d{4}-\d{2}-\d{2} .*)\] \"GET /projects/260 HTTP/1\.1\"\s(200|301|[4-5]\d{2})? (\d+)'
+pattern = r'^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - \[(\d{4}-\d{2}-\d{2} .*)\] \"GET /projects/260 HTTP/1\.1\"\s(200|301|[4-5]\d{2}) (\d+)'
+
 try:
-    input_str = sys.stdin.readline()
-    while input_str:
+    for input_str in sys.stdin:
         re_match = re.match(pattern, input_str)
         if re_match:
             num_lines += 1
@@ -25,11 +25,10 @@ try:
                 for key, value in sorted(status_codes.items()):
                     if value > 0:
                         print("{}: {}".format(key, value))
-        input_str = sys.stdin.readline()
 except KeyboardInterrupt:
     pass
 finally:
-    print("File size: {}".format(size))
+    print(f"File size: {size}")
     for key, value in sorted(status_codes.items()):
         if value > 0:
             print("{}: {}".format(key, value))
