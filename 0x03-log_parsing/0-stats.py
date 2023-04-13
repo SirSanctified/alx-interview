@@ -27,6 +27,8 @@ try:
                         print("{}: {}".format(key, value))
         input_str = sys.stdin.readline()
 except KeyboardInterrupt:
+    pass
+finally:
     print("File size: {}".format(size))
     for key, value in sorted(status_codes.items()):
         if value > 0:
