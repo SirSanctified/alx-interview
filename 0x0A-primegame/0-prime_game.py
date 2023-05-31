@@ -79,6 +79,8 @@ def isWinner(x, nums):
         if n in primes:
             return "Ben"
         if n - primes[-1] == 1:
+            return "Ben"
+        if primes[-1] == n - 2 and n > 2:
             return "Maria"
         for i in range(len(primes)):
             if i == len(primes) - 1:
